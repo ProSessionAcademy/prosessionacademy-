@@ -1,0 +1,76 @@
+{
+  "name": "Vote",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Voting topic title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Voting description"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "course",
+        "project",
+        "feature"
+      ],
+      "description": "What the vote is for"
+    },
+    "options": {
+      "type": "array",
+      "description": "Voting options",
+      "items": {
+        "type": "object",
+        "properties": {
+          "option": {
+            "type": "string"
+          },
+          "votes": {
+            "type": "number",
+            "default": 0
+          },
+          "voters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "image_url": {
+            "type": "string",
+            "description": "Option image for visual polls"
+          }
+        }
+      }
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Voting end date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "closed"
+      ],
+      "default": "active",
+      "description": "Vote status"
+    },
+    "total_votes": {
+      "type": "number",
+      "default": 0,
+      "description": "Total number of votes cast"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "type",
+    "options",
+    "end_date"
+  ]
+}

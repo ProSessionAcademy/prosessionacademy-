@@ -1,0 +1,104 @@
+{
+  "name": "InteractiveQuiz",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Quiz title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Quiz description"
+    },
+    "quiz_type": {
+      "type": "string",
+      "enum": [
+        "slider",
+        "spin_wheel",
+        "picture_choice",
+        "standard"
+      ],
+      "description": "Type of interactive quiz"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "self_development",
+        "leadership",
+        "management",
+        "business",
+        "sales",
+        "marketing",
+        "study_skills",
+        "general"
+      ],
+      "description": "Quiz category"
+    },
+    "questions": {
+      "type": "array",
+      "description": "Quiz questions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "slider",
+              "spin_wheel",
+              "picture_choice",
+              "multiple_choice"
+            ]
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "image_url": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "correct_answer": {
+            "type": "number"
+          },
+          "min_value": {
+            "type": "number"
+          },
+          "max_value": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Creator email"
+    },
+    "attempts": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of attempts"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Quiz thumbnail"
+    }
+  },
+  "required": [
+    "title",
+    "quiz_type",
+    "questions",
+    "created_by"
+  ]
+}

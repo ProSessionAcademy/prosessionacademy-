@@ -1,0 +1,82 @@
+{
+  "name": "Chapter",
+  "type": "object",
+  "properties": {
+    "course_id": {
+      "type": "string",
+      "description": "Reference to the course"
+    },
+    "title": {
+      "type": "string",
+      "description": "Chapter title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Chapter description"
+    },
+    "order": {
+      "type": "number",
+      "description": "Chapter order in the course"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Video URL for the chapter"
+    },
+    "content": {
+      "type": "string",
+      "description": "Text content for the chapter"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "description": "Chapter duration in minutes"
+    },
+    "voice_explanation_url": {
+      "type": "string",
+      "description": "URL to audio file with chapter explanation"
+    },
+    "content_blocks": {
+      "type": "array",
+      "description": "Interactive content blocks",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "video",
+              "flip_cards",
+              "quiz",
+              "slider",
+              "expandable",
+              "image",
+              "interactive_slider",
+              "tooltip_text",
+              "data_visualization",
+              "comparison_slider",
+              "reveal_card",
+              "accordion",
+              "definition_card",
+              "concept_map",
+              "timeline",
+              "sales_simulator",
+              "code_challenge"
+            ]
+          },
+          "order": {
+            "type": "number"
+          },
+          "data": {
+            "type": "object"
+          }
+        }
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "course_id",
+    "title",
+    "order"
+  ]
+}

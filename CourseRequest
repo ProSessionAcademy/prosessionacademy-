@@ -1,0 +1,94 @@
+{
+  "name": "CourseRequest",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Requester's email"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Requester's name"
+    },
+    "course_title": {
+      "type": "string",
+      "description": "Requested course title"
+    },
+    "course_description": {
+      "type": "string",
+      "description": "What the course should cover"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "self_development",
+        "leadership",
+        "management",
+        "business",
+        "sales",
+        "marketing",
+        "study_skills",
+        "other"
+      ],
+      "description": "Course category"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "expert"
+      ],
+      "description": "Desired difficulty level"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Why you need this course"
+    },
+    "urgency": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium",
+      "description": "How urgently you need it"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewing",
+        "approved",
+        "completed",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Request status"
+    },
+    "votes": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of users who want this course"
+    },
+    "voters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Emails of users who voted"
+    }
+  },
+  "required": [
+    "user_email",
+    "user_name",
+    "course_title",
+    "course_description",
+    "category",
+    "level",
+    "reason"
+  ]
+}

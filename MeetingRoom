@@ -1,0 +1,74 @@
+{
+  "name": "MeetingRoom",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Meeting room name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Meeting description"
+    },
+    "host_email": {
+      "type": "string",
+      "description": "Host email"
+    },
+    "host_name": {
+      "type": "string",
+      "description": "Host name"
+    },
+    "scheduled_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Scheduled meeting time"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "default": 60,
+      "description": "Meeting duration"
+    },
+    "max_participants": {
+      "type": "number",
+      "default": 50,
+      "description": "Maximum participants"
+    },
+    "participants": {
+      "type": "array",
+      "description": "Participant emails",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "meeting_url": {
+      "type": "string",
+      "description": "Video meeting link"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "active",
+        "completed",
+        "cancelled"
+      ],
+      "default": "scheduled"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether anyone can join"
+    },
+    "recording_url": {
+      "type": "string",
+      "description": "Recording link if available"
+    }
+  },
+  "required": [
+    "title",
+    "host_email",
+    "host_name",
+    "scheduled_time"
+  ]
+}

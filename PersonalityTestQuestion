@@ -1,0 +1,43 @@
+{
+  "name": "PersonalityTestQuestion",
+  "type": "object",
+  "properties": {
+    "question": {
+      "type": "string",
+      "description": "The question text"
+    },
+    "options": {
+      "type": "array",
+      "description": "Two answer options",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "description": "Personality type indicator (E/I, S/N, T/F, J/P)"
+          },
+          "emoji": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "order": {
+      "type": "number",
+      "description": "Question order in test"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether question is active in test"
+    }
+  },
+  "required": [
+    "question",
+    "options",
+    "order"
+  ]
+}

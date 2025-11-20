@@ -1,0 +1,163 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "student_academic_year": {
+      "type": "string",
+      "description": "Student's academic year"
+    },
+    "student_major": {
+      "type": "string",
+      "description": "Student's major/field"
+    },
+    "student_gpa": {
+      "type": "string",
+      "description": "Student's GPA"
+    },
+    "student_notes": {
+      "type": "array",
+      "description": "Student's personal notes",
+      "default": []
+    },
+    "student_assignments": {
+      "type": "array",
+      "description": "Student's assignments",
+      "default": []
+    },
+    "student_study_sessions": {
+      "type": "array",
+      "description": "Logged study sessions",
+      "default": []
+    },
+    "student_study_streak": {
+      "type": "number",
+      "description": "Current study streak in days",
+      "default": 0
+    },
+    "exam_checklist": {
+      "type": "object",
+      "description": "Exam preparation checklist progress",
+      "default": {}
+    },
+    "earned_badges": {
+      "type": "array",
+      "description": "List of earned badges/certificates",
+      "items": {
+        "type": "object",
+        "properties": {
+          "badge_id": {
+            "type": "string"
+          },
+          "badge_name": {
+            "type": "string"
+          },
+          "badge_tier": {
+            "type": "string"
+          },
+          "earned_date": {
+            "type": "string"
+          },
+          "course_count": {
+            "type": "number"
+          }
+        }
+      },
+      "default": []
+    },
+    "completed_courses_count": {
+      "type": "number",
+      "description": "Total number of completed courses",
+      "default": 0
+    },
+    "subscription_status": {
+      "type": "string",
+      "enum": [
+        "free_trial",
+        "premium",
+        "standard"
+      ],
+      "default": "free_trial",
+      "description": "User's subscription status"
+    },
+    "trial_start_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the free trial started"
+    },
+    "trial_end_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the free trial ends"
+    },
+    "subscription_end_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When premium subscription ends"
+    },
+    "monthly_usage": {
+      "type": "object",
+      "description": "Track monthly usage for standard users",
+      "properties": {
+        "month": {
+          "type": "string"
+        },
+        "courses_started": {
+          "type": "number",
+          "default": 0
+        },
+        "ai_messages_today": {
+          "type": "number",
+          "default": 0
+        },
+        "ai_messages_date": {
+          "type": "string"
+        },
+        "meetings_joined": {
+          "type": "number",
+          "default": 0
+        },
+        "posts_created": {
+          "type": "number",
+          "default": 0
+        },
+        "course_requests_made": {
+          "type": "number",
+          "default": 0
+        },
+        "resources_downloaded": {
+          "type": "number",
+          "default": 0
+        },
+        "events_attended": {
+          "type": "number",
+          "default": 0
+        }
+      },
+      "default": {}
+    },
+    "group_profiles": {
+      "type": "array",
+      "description": "User profiles in different groups",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "profile_picture_url": {
+            "type": "string"
+          },
+          "completed_onboarding": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "default": []
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,70 @@
+{
+  "name": "Pathway",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Pathway title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Pathway description"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "self_development",
+        "leadership",
+        "management",
+        "business",
+        "sales",
+        "marketing",
+        "study_skills"
+      ],
+      "description": "Pathway category"
+    },
+    "courses": {
+      "type": "array",
+      "description": "Ordered list of course IDs in the pathway",
+      "items": {
+        "type": "object",
+        "properties": {
+          "course_id": {
+            "type": "string"
+          },
+          "order": {
+            "type": "number"
+          },
+          "level": {
+            "type": "string",
+            "enum": [
+              "beginner",
+              "intermediate",
+              "advanced",
+              "expert"
+            ]
+          }
+        }
+      },
+      "default": []
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Pathway thumbnail"
+    },
+    "estimated_duration": {
+      "type": "string",
+      "description": "Total estimated duration"
+    },
+    "enrollment_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of enrolled learners"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "category"
+  ]
+}

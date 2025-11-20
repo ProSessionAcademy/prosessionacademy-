@@ -1,0 +1,94 @@
+{
+  "name": "Post",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Post title/question"
+    },
+    "content": {
+      "type": "string",
+      "description": "Post content/description"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Author's email"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Author's name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "self_development",
+        "leadership",
+        "management",
+        "business",
+        "sales",
+        "marketing",
+        "study_skills",
+        "general"
+      ],
+      "description": "Post category"
+    },
+    "media_urls": {
+      "type": "array",
+      "description": "Images or videos attached to post",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "answers": {
+      "type": "array",
+      "description": "Answers to the post",
+      "items": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "created_date": {
+            "type": "string"
+          },
+          "upvotes": {
+            "type": "number",
+            "default": 0
+          },
+          "media_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          }
+        }
+      },
+      "default": []
+    },
+    "views": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of views"
+    },
+    "upvotes": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of upvotes"
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "author_email",
+    "author_name",
+    "category"
+  ]
+}

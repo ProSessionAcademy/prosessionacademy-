@@ -1,0 +1,59 @@
+{
+  "name": "IQTestQuestion",
+  "type": "object",
+  "properties": {
+    "question": {
+      "type": "string",
+      "description": "The question text"
+    },
+    "question_type": {
+      "type": "string",
+      "enum": [
+        "pattern",
+        "logic",
+        "verbal",
+        "mathematical",
+        "spatial",
+        "analogies"
+      ],
+      "description": "Type of cognitive question"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Answer options (4 options)"
+    },
+    "correct_answer": {
+      "type": "number",
+      "description": "Index of correct option (0-3)"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "medium",
+      "description": "Question difficulty"
+    },
+    "order": {
+      "type": "number",
+      "description": "Question order in test"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether question is active in test"
+    }
+  },
+  "required": [
+    "question",
+    "question_type",
+    "options",
+    "correct_answer",
+    "order"
+  ]
+}

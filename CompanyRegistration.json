@@ -1,0 +1,90 @@
+{
+  "name": "CompanyRegistration",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "contact_person": {
+      "type": "string",
+      "description": "Contact person name"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "Contact email"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "industry": {
+      "type": "string",
+      "description": "Industry sector"
+    },
+    "description": {
+      "type": "string",
+      "description": "Company description"
+    },
+    "website": {
+      "type": "string",
+      "description": "Company website"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "Company logo"
+    },
+    "location": {
+      "type": "string",
+      "description": "Company location"
+    },
+    "opportunities": {
+      "type": "array",
+      "description": "Internship/job opportunities",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "internship",
+              "tour",
+              "job"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "requirements": {
+            "type": "string"
+          },
+          "application_deadline": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "default": []
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Approval status"
+    }
+  },
+  "required": [
+    "company_name",
+    "contact_person",
+    "contact_email",
+    "industry",
+    "description"
+  ]
+}

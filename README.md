@@ -1,2 +1,9 @@
-# prosessionacademy-
-An platform that offers interactive courses to build your skills. Through its Practice Hub, you get real-world scenario simulations with instant AI feedback. You can join community groups to network with others. There’s even a personality test to help you understand your strengths. giving access to courses, practice sessions, and more.
+# Base44 Preview Template for MicroVM sandbox
+
+This template is used by the server to preview user-apps.
+
+## user files
+server creates the user-app files in the __components__, __pages__ folders
+
+## server injected data
+server injects app related data to __app.config.js__, which is used by App.jsx to render the components in the files.

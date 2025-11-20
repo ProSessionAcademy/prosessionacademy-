@@ -1,0 +1,61 @@
+{
+  "name": "Teacher",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Teacher's email"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Teacher's full name"
+    },
+    "title": {
+      "type": "string",
+      "description": "Professor/Teacher/Dr/etc"
+    },
+    "specialization": {
+      "type": "string",
+      "description": "Subject specialization"
+    },
+    "group_id": {
+      "type": "string",
+      "description": "Which group the teacher belongs to"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Approval status"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Teacher biography"
+    },
+    "profile_picture": {
+      "type": "string",
+      "description": "Profile picture URL"
+    },
+    "office_hours": {
+      "type": "string",
+      "description": "Available office hours"
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Subjects taught"
+    }
+  },
+  "required": [
+    "user_email",
+    "full_name",
+    "group_id"
+  ]
+}

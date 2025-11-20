@@ -1,0 +1,73 @@
+{
+  "name": "Course",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Course title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Course description"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "self_development",
+        "leadership",
+        "management",
+        "business",
+        "sales",
+        "marketing",
+        "study_skills"
+      ],
+      "description": "Course category"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "expert"
+      ],
+      "description": "Course difficulty level"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Course thumbnail image URL"
+    },
+    "instructor": {
+      "type": "string",
+      "description": "Instructor name"
+    },
+    "duration_hours": {
+      "type": "number",
+      "description": "Estimated duration in hours"
+    },
+    "published": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the course is published"
+    },
+    "enrollment_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of enrolled students"
+    },
+    "is_student_course": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this course appears in Student Space"
+    },
+    "academic_year": {
+      "type": "number",
+      "description": "For year-specific courses (1-4)"
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "level"
+  ]
+}

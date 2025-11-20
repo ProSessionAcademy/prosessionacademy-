@@ -1,0 +1,46 @@
+{
+  "name": "Quiz",
+  "type": "object",
+  "properties": {
+    "chapter_id": {
+      "type": "string",
+      "description": "Reference to the chapter"
+    },
+    "title": {
+      "type": "string",
+      "description": "Quiz title"
+    },
+    "passing_score": {
+      "type": "number",
+      "default": 70,
+      "description": "Minimum score to pass (percentage)"
+    },
+    "questions": {
+      "type": "array",
+      "description": "Quiz questions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct_answer": {
+            "type": "number",
+            "description": "Index of correct option"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "chapter_id",
+    "title",
+    "questions"
+  ]
+}

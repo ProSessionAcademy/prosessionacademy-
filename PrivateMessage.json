@@ -1,0 +1,58 @@
+{
+  "name": "PrivateMessage",
+  "type": "object",
+  "properties": {
+    "sender_email": {
+      "type": "string",
+      "description": "Sender's email"
+    },
+    "sender_name": {
+      "type": "string",
+      "description": "Sender's name"
+    },
+    "recipient_email": {
+      "type": "string",
+      "description": "Recipient's email"
+    },
+    "recipient_name": {
+      "type": "string",
+      "description": "Recipient's name"
+    },
+    "group_id": {
+      "type": "string",
+      "description": "Related group ID"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Message subject"
+    },
+    "message": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether message has been read"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Attached files"
+    },
+    "thread_id": {
+      "type": "string",
+      "description": "Conversation thread ID"
+    }
+  },
+  "required": [
+    "sender_email",
+    "sender_name",
+    "recipient_email",
+    "recipient_name",
+    "message"
+  ]
+}

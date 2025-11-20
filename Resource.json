@@ -1,0 +1,62 @@
+{
+  "name": "Resource",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Resource title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Resource description"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "document",
+        "checklist",
+        "template",
+        "guide",
+        "ebook"
+      ],
+      "description": "Resource type"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "self_development",
+        "leadership",
+        "management",
+        "business",
+        "sales",
+        "marketing",
+        "study_skills",
+        "general"
+      ],
+      "description": "Resource category"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "File URL"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Thumbnail URL"
+    },
+    "downloads": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of downloads"
+    },
+    "file_size": {
+      "type": "string",
+      "description": "File size (e.g., '2.5 MB')"
+    }
+  },
+  "required": [
+    "title",
+    "type",
+    "category",
+    "file_url"
+  ]
+}

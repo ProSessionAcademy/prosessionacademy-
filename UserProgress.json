@@ -1,0 +1,59 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User's email"
+    },
+    "course_id": {
+      "type": "string",
+      "description": "Course ID"
+    },
+    "completed_chapters": {
+      "type": "array",
+      "description": "List of completed chapter IDs",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "quiz_scores": {
+      "type": "object",
+      "description": "Quiz scores by chapter ID",
+      "default": {}
+    },
+    "progress_percentage": {
+      "type": "number",
+      "default": 0,
+      "description": "Overall progress percentage"
+    },
+    "started_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the user started the course"
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the user completed the course"
+    },
+    "certificate_issued": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether certificate was issued"
+    },
+    "certificate_id": {
+      "type": "string",
+      "description": "Unique certificate ID"
+    },
+    "final_score": {
+      "type": "number",
+      "description": "Final course score percentage"
+    }
+  },
+  "required": [
+    "user_email",
+    "course_id"
+  ]
+}

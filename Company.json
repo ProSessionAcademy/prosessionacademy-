@@ -1,0 +1,80 @@
+{
+  "name": "Company",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Company description"
+    },
+    "industry": {
+      "type": "string",
+      "description": "Industry sector"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "Company logo URL"
+    },
+    "website": {
+      "type": "string",
+      "description": "Company website"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "Contact email"
+    },
+    "contact_person": {
+      "type": "string",
+      "description": "Contact person name"
+    },
+    "opportunities": {
+      "type": "array",
+      "description": "Internship and tour opportunities",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "internship",
+              "tour",
+              "job"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "requirements": {
+            "type": "string"
+          },
+          "application_deadline": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "default": []
+    },
+    "location": {
+      "type": "string",
+      "description": "Company location"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether company is verified"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "industry",
+    "contact_email"
+  ]
+}

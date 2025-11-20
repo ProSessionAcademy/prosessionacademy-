@@ -1,0 +1,83 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Event title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event description"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "live_session",
+        "workshop",
+        "webinar",
+        "physical_event",
+        "company_tour",
+        "networking"
+      ],
+      "description": "Event type"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event date and time"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location (URL for online, address for physical)"
+    },
+    "organizer_email": {
+      "type": "string",
+      "description": "Event organizer email"
+    },
+    "organizer_name": {
+      "type": "string",
+      "description": "Event organizer name"
+    },
+    "max_participants": {
+      "type": "number",
+      "description": "Maximum number of participants"
+    },
+    "registered_users": {
+      "type": "array",
+      "description": "List of registered user emails",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "cancelled",
+        "completed"
+      ],
+      "default": "approved",
+      "description": "Event status"
+    },
+    "is_online": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether event is online or physical"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Event thumbnail"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "type",
+    "date",
+    "organizer_email",
+    "organizer_name"
+  ]
+}
